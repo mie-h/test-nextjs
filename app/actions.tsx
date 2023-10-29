@@ -16,7 +16,7 @@ export async function startProcessing(prevState: any, formData: FormData) {
     const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
     const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
     console.log(region);
-    console.log(accessKeyId, secretAccessKey);
+    console.log(accessKeyId);
     console.log("env vars" + process.env);
     if (accessKeyId == null && secretAccessKey == null) {
         console.log("No AWS credentials found in environment, using IAM role instead");
@@ -36,5 +36,5 @@ export async function startProcessing(prevState: any, formData: FormData) {
             "receiver_public_key": publickey,
         })
     };
-    await lambda.invoke(params).promise();
+    lambda.invoke(params);
 }
