@@ -28,7 +28,7 @@ export async function startProcessing(prevState: any, formData: FormData) {
 
     const params = {
         FunctionName: "text_to_nft",
-        InvocationType: "RequestResponse",
+        InvocationType: "Event",
         Payload: JSON.stringify({
             "text": prompt,
             "name": "name",
@@ -36,5 +36,6 @@ export async function startProcessing(prevState: any, formData: FormData) {
             "receiver_public_key": publickey,
         })
     };
-    lambda.invoke(params);
+    // lambda.invoke(params);
+    await lambda.invoke(params).promise();
 }
