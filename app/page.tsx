@@ -1,9 +1,5 @@
 
-import Image from 'next/image'
 import React from 'react'
-import axios from 'axios'
-import { FormEvent, useState } from 'react'
-import User from './components/user';
 import { AddForm } from '@/app/add-form';
 
 
