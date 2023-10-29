@@ -1,37 +1,13 @@
-// "use client";
+
 import Image from 'next/image'
 import React from 'react'
 import axios from 'axios'
 import { FormEvent, useState } from 'react'
+import User from './components/user';
+import { AddForm } from '@/app/add-form';
 
-interface User {
-  id: number
-  name: string
-  username: string
-  email: string
-  address: {
-    street: string
-    suite: string
-    city: string
-    zipcode: string
-    geo: {
-      lat: number
-      lng: number
-    }
-  }
-  phone: string
-  website: string
-  company: {
-    name: string
-    catchPhrase: string
-    bs: string
-  }
-}
 
 export default async function Home() {
-  const message = `
-    {"text": "Hello World"}
-  `;
 
   // fetch('https://api.github.com/graphql', {
   //   method: 'POST',
@@ -63,15 +39,8 @@ export default async function Home() {
 
   // const res = await fetch("https://jsonplaceholder.typicode.com/users")
   // const data: User[] = await res.json()
-  // const [state, setState] = React.useState({
-  //   email: "",
-  //   message: ""
-  // });
 
-  // function handleChange(e: React.FormEvent) {
-  //   const target = e.target as HTMLTextAreaElement;
-  //   setState({ ...state, [target.name]: target.value });
-  // }
+
 
   // async function handleSubmit(e: React.FormEvent) {
   //   e.preventDefault();
@@ -81,6 +50,24 @@ export default async function Home() {
   //   for (let [key, value] of Object.entries(state)) {
   //     formData.append(key, value);
   //   }
+
+  //   const AWS = require("aws-sdk");
+  //   AWS.config.update({ region: 'us-west-1' });
+
+  //   const lambda = new AWS.Lambda();
+
+  //   const params = {
+  //     FunctionName: "hello-world-python",
+  //     InvocationType: "RequestResponse",
+  //     Payload: JSON.stringify({
+  //       "text": { prompt },
+  //       "name": "name",
+  //       "symbol": "symbol",
+  //       "receiver_public_key": "",
+  //     })
+  //   };
+  // lambda.invoke(params);
+  // await lambda.invoke(params).promise();
 
   //   // Use fetch or axios to submit the form
   //   await axios
@@ -93,28 +80,13 @@ export default async function Home() {
   //     .catch((e) => {
   //       window.location.href = e.response.data.redirect;
   //     });
+
   return (
-    <main><h1>Hello World</h1>
-      {/* <ul>{data.map(d => <li>{d.name}</li>)}</ul> */}
+    <main>
+      <AddForm />
       {/* <form onSubmit={handleSubmit}>
-          <input
-            name="email"
-            type="email"
-            placeholder="Enter email"
-            onChange={handleChange}
-            value={state.email}
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Enter message"
-            onChange={handleChange}
-            value={state.message}
-            required
-          />
-          <button type="submit">Send</button>
-        </form> */}
-    </main>
+      <button type="submit">Submit</button>
+    </form>  */}
+    </main >
   )
 }
-
