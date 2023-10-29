@@ -15,6 +15,9 @@ export async function startProcessing(prevState: any, formData: FormData) {
     AWS.config.update({ region: region });
     const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
     const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
+    console.log(region);
+    console.log(accessKeyId, secretAccessKey);
+    console.log("env vars" + process.env);
     if (accessKeyId == null && secretAccessKey == null) {
         console.log("No AWS credentials found in environment, using IAM role instead");
     }
