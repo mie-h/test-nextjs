@@ -1,0 +1,10 @@
+#!/bin/bash
+
+mkdir python
+cp -r api python/api/
+cp -r metaplex python/metaplex/
+cp -r utils python/utils/
+cp *.py python/
+cp -r devenv/lib/python3.9/site-packages/* python/
+zip -r text-to-nft.zip python/
+aws s3 cp text-to-nft.zip s3://mie-bucket
