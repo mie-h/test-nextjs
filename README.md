@@ -1,4 +1,4 @@
-### Text To NFT
+## Text To NFT
 
 Text To NFT service is Solana crypto art generator and minting service that merges art and blockchain to empower users to create and own unique digital artworks on the Solana blockchain. This service simplifies the process of creating and minting NFTs by combining a user-provided prompt with a public key from a Solana crypto wallet. 
 
